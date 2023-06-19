@@ -2,7 +2,7 @@ FROM golang:1.19 AS builder
 
 COPY . /builder
 WORKDIR /builder
-
+RUN go env -w GOPROXY=https://goproxy.cn
 RUN make build
 
 FROM alpine:3

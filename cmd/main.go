@@ -4,12 +4,13 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"github.com/stulzq/azure-openai-proxy/azure"
 	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
+
+	"github.com/stulzq/azure-openai-proxy/azure"
 
 	"github.com/gin-gonic/gin"
 	"github.com/pkg/errors"
@@ -30,7 +31,7 @@ func main() {
 	registerRoute(r)
 
 	srv := &http.Server{
-		Addr:    ":8080",
+		Addr:    ":8070",
 		Handler: r,
 	}
 
